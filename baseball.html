@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Baseball</title>
+    <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <div class="nav-wrapper">
+            <div class="left-side">
+                <div class="nav-link-wrapper">
+                    <a href="index.html">Home</a>
+                </div>
+                <div class="nav-link-wrapper active-nav-link">
+                    <a href="about.html">About</a>
+                </div>
+            </div>
+            <div class="right-side">
+                <div class="brand">
+                    <div>ANDORRA FIELDS</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="content-wrapper">
+            <div class="two-column-wrapper">
+                <div class="left-column-wrapper">
+                    
+
+                    <div id="calculator-wrapper">
+                        <!-- <button id="reveal-button" onclick="toggleCalculator()">Hide Statistics Calculator</button> -->
+                        <h2>Learn to calculate baseball statistics</h2>
+                        <div id="baseball-calculator">
+                            <form class="form">
+                                <h3>Enter Player's Info:</h3>
+                                Number of times at bat (AB): <input type="text" id="AB" /><br>
+                                Number of Singles (1B):  <input type="text" id="1B" /><br>
+                                Number of Doubles (2B):  <input type="text" id="2B" /><br>
+                                Number of Triples (3B):  <input type="text" id="3B" /><br>
+                                Number of Homeruns (HR):  <input type="text" id="HR" /><br>
+                                Number of times walked (BB):  <input type="text" id="BB" /><br>
+                                Number of Sacrifice Flies (SF):  <input type="text" id="SAC" /><br>
+                                Number of times hit by pitch (HBP):  <input type="text" id="HBP" /><br>
+                                <br>
+                                <div class="calculator-buttons">
+                                    <input id="calculate-button" type="button" onclick="calculateAll(), toggleCalculator()" value="Calculate Stats!" />
+                                    <br>
+                                </div>
+                            </form>
+                                <div id="results">
+                                      <p id="battingavg"></p>
+                                      <p id="obp"></p>   
+                                      <p id="slg"></p>
+                                      <p id="ops"></p>  
+                                </div>
+                        </div>
+                    </div>
+                    <p class="bold">
+                        <a href="https://github.com/andorrafields/Baseball-Calculator">Click here to see Java CLI code on Github</a>
+                    </p>
+                    
+                    
+
+                </div>
+                <div class="right-column-wrapper">
+                    <div>
+                        <h2>Statistics Formulas</h2>
+                        <div class="formula" id="formulas-wrapper">
+                            <h3>Total Hits (H)</h3>
+                            <p class="formula">H = 1B + 2B + 3B + HR</p>
+                            <br>
+                            <h3>Batting Average (BA):</h3>
+                            <p>BA = H / AB</p>
+                            <br>
+                            <h3>On Base Percentage (OBP):</h3>
+                            <p>OBP = (H + BB + HBP) / (AB + BB + HBP + SF)</p>
+                            <br>
+                            <h3>Slugging Percentage (SLG):</h3>
+                            <p>(1B + (2 * 2B) + (3 * 3B) + (4 * HR)) / AB</p>
+                            <br>
+                            <h3>On-Base Plus Slugging (OPS):</h3>
+                            <p>OBP + SLG</p>
+
+                            <div id="key-wrapper">   
+                                <h5>KEY</h5>                          
+                                <p>H = Total Hits</p>
+                                <p>1B = Singles</p>
+                                <p>2B = Doubles</p>
+                                <p>3B = Triples</p>
+                                <p>HR = Home Runs</p>
+                                <p>BA = Batting Average</p>
+                                <p>AB = At Bats</p>
+                                <p>OBP = On Base Percentage</p>
+                                <p>BB = Walks (Base on Balls)</p>
+                                <p>HBP = Hit By Pitch</p>
+                                <p>SF = Sacrifice Flies</p>
+                                <p>SLG = Slugging Percentage</p>
+                                <p>OPS = On-Base Plus Slugging</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+   </div>
+
+</body>
+<script>
+
+        let ab = 0;
+        let singles = 0;
+        let doubles = 0;
+        let triples = 0;
+        let homeruns = 0;
+        let hits = 0;
+        let bb = 0;
+        let hbp = 0;
+        let sf = 0;
+        let pa = 0;
+
+    function toggleCalculator() {
+        var x = document.getElementById("results");
+        if (x.style.display === "none") {
+        x.style.display = "none";
+        } else {
+        x.style.display = "block";
+        }
+    } 
+
+    function updateNumbers() {
+        singles = parseInt(document.getElementById("1B").value);
+        doubles = parseInt(document.getElementById("2B").value);
+        triples = parseInt(document.getElementById("3B").value);
+        homeruns = parseInt(document.getElementById("HR").value);
+        hits =  singles + doubles + triples + homeruns;
+        ab = parseInt(document.getElementById("AB").value);
+        bb = parseInt(document.getElementById("BB").value);
+        hbp = parseInt(document.getElementById("HBP").value);
+        sf = parseInt(document.getElementById("SAC").value);
+        pa = ab + bb + hbp + sf;
+    }
+
+    function calculateAll() {
+        updateNumbers();
+        let ba = (hits/ab);
+        let baRounded = ba.toFixed(3);
+        document.getElementById("battingavg").innerText = ("Batting Average(BA): " + baRounded);
+
+        let obp = (hits + bb + hbp) / pa
+        let obpRounded = obp.toFixed(3);
+        document.getElementById("obp").innerText = ("On Base Percentage (OBP): " + obpRounded);
+
+        let slg = (singles + (2*doubles) + (3*triples) + (4*homeruns)) / ab;
+        let slgRounded = slg.toFixed(3);
+        document.getElementById("slg").innerText = ("Slugging Percentage (SLG): " + slgRounded);
+
+        let ops = (obp + slg);
+        let opsRounded = ops.toFixed(3);
+        document.getElementById("ops").innerText = ("On Base Plus Slugging (OPS): " + opsRounded);
+    }
+
+    
+
+</script>
+
+</html>

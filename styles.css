@@ -1,0 +1,264 @@
+/*main style*/
+body {
+    font-family: 'Lato', sans-serif;
+    margin: 0px;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: 1fr;
+}
+
+/*navigation style*/
+.nav-wrapper{
+    display: flex;
+    justify-content: space-between;
+    padding: 38px;
+}
+
+.left-side{
+    display: flex;
+}
+
+.nav-wrapper > .left-side > div {
+    margin-right: 20px;
+    font-size: 0.9em;
+    text-transform: uppercase;
+}
+
+.nav-link-wrapper {
+    height: 22px;
+    border-bottom: 1px solid transparent;
+    transition: border-bottom 0.5s;
+}
+
+.nav-link-wrapper a {
+    color: #8a8a8a;
+    text-decoration: none;
+    transition: color 0.5s;
+}
+
+.nav-link-wrapper:hover {
+    border-bottom: 1px solid black;
+}
+
+.nav-link-wrapper a:hover {
+    color: black;
+}
+
+.active-nav-link {
+    border-bottom: 1px solid black;
+}
+
+.active-nav-link a {
+    color: black !important;
+}
+
+/*portfolio styles*/
+
+.portfolio-items-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+
+}
+
+.portfolio-item-wrapper {
+    position: relative;
+
+}
+
+.portfolio-img-background {
+    height: 300px;
+    width: 100%;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.img-text-wrapper {
+    position: absolute;
+    top: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    text-align: center;
+    padding-left: 100px;
+    padding-right: 100px;
+}
+
+.logo-wrapper img {
+    width: 50%;
+    margin-bottom: 20px;
+}
+
+.img-text-wrapper .subtitle {
+    transition: 1s;
+    color: transparent;
+    font-weight: 600;
+}
+
+.img-text-wrapper:hover .subtitle {
+    font-weight: 600;
+    color: lightseagreen;
+
+}
+
+.img-darken {
+    transition: 1s;
+    filter: brightness(10%);
+}
+
+.two-column-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+
+}
+
+.profile-image-wrapper img {
+    width: 100%;
+
+}
+
+.profile-content-wrapper {
+    padding: 30px;
+}
+
+.profile-content-wrapper h1 {
+    color: lightseagreen;
+}
+
+#vending-logo {
+    width: 50%;
+}
+
+#covid-logo {
+    width: 60%;
+}
+
+#portfolio-logo {
+    width: 60%;
+}
+
+/*baseball style*/
+.left-column-wrapper {
+    padding: 38px;
+}
+
+.right-column-wrapper {
+    padding: 38px;
+}
+
+#baseball-calculator {
+    width: 90%;
+    padding: 30px 0;
+    text-align: center;
+    background-color: lightblue;
+    margin-top: 20px;
+    margin-left: 20px;
+}
+
+.form {
+    text-align: left;
+    padding-left: 5%;
+    padding-right: 5%;
+    line-height: 140%;
+}
+
+.form input {
+    width: 25%;
+}
+
+/* #reveal-button {
+    color: blueviolet;
+    border: 1px solid blueviolet !important;
+    background-color: rgb(231, 222, 240);
+    border-radius: 4px;
+    font-size: large;
+} */
+
+#reveal-button:hover {
+    color: black;
+    background-color: rgb(201, 164, 238);
+    transition: 1s;
+}
+
+#calculate-button {
+    color: blueviolet;
+    border: 1px solid blueviolet !important;
+    background-color: rgb(231, 222, 240);
+    border-radius: 4px;
+    font-size: medium;
+}
+#calculate-button:hover {
+    color: black;
+    background-color: rgb(201, 164, 238);
+    transition: 1s;
+}
+
+#results {
+    max-width: 80%;
+    background-color: rgb(201, 164, 238);
+    padding-top: 10px;
+    padding-bottom: 10px;
+    margin-left: 10%;
+}
+
+#formulas-wrapper {
+    width: 90%;
+    padding: 30px 0;
+    text-align: center;
+    background-color: lightblue;
+    margin-top: 20px;
+    margin-left: 20px;
+}
+
+.formula {
+    
+    line-height: .3;
+}
+
+#key-wrapper {
+    max-width: 80%;
+    background-color: rgb(201, 164, 238);
+    padding-top: 10px;
+    padding-bottom: 10px;
+    margin-left: 10%;
+    font-size: small;
+}
+
+h5 {
+    text-decoration: underline;
+}
+
+#npgeek-img {
+    width: 150%;
+}
+
+#baseball-logo {
+    width: 75%;
+}
+
+#about-me-img {
+    margin: 8% 10% 20% 20%;
+    color: lightseagreen;
+}
+
+#about-me-content {
+    margin-right: 20%;
+}
+
+/*national parks html */
+
+.bold {
+    font-weight: bold;
+}
+
+.project-wrapper {
+    background-color: beige;
+    padding-top: 1%;
+    padding-left: 15%;
+    padding-right: 15%;
+    padding-bottom: 1%;
+}
