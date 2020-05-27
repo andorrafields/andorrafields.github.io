@@ -30,7 +30,6 @@
                     
 
                     <div id="calculator-wrapper">
-                        <!-- <button id="reveal-button" onclick="toggleCalculator()">Hide Statistics Calculator</button> -->
                         <h2>Learn to calculate baseball statistics</h2>
                         <div id="baseball-calculator">
                             <form class="form">
@@ -49,7 +48,7 @@
                                     <br>
                                 </div>
                             </form>
-                                <div id="results">
+                                <div class="noResults" id="results">
                                       <p id="battingavg"></p>
                                       <p id="obp"></p>   
                                       <p id="slg"></p>
@@ -159,6 +158,10 @@
         let ops = (obp + slg);
         let opsRounded = ops.toFixed(3);
         document.getElementById("ops").innerText = ("On Base Plus Slugging (OPS): " + opsRounded);
+
+        const calcResult = document.getElementById("results"); 
+        calcResult.classList.remove("noResults");
+        calcResult.classList.add("results");
     }
 
     
