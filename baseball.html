@@ -40,9 +40,16 @@
                                 Number of Triples (3B):  <input type="text" id="3B" /><br>
                                 Number of Homeruns (HR):  <input type="text" id="HR" /><br>
                                 Number of times walked (BB):  <input type="text" id="BB" /><br>
-                                Number of Sacrifice Flies (SF):  <input type="text" id="SAC" /><br>
+                                Number of Sacrifice Flies + Sac Hits (SAC):  <input type="text" id="SAC" /><br>
                                 Number of times hit by pitch (HBP):  <input type="text" id="HBP" /><br>
-                                <br>
+                                
+                                <div class = "small-print">
+                                    <p>
+                                        (*Try Miguel Cabrera's 2011 Triple Crown year: <br>
+                                        AB:572, 1B:119, 2B:48, 3B:0, HR:30, BB:108, SAC:5, HBP:3)
+                                    </p>
+                                    <p></p>
+                                </div>
                                 <div class="calculator-buttons">
                                     <input id="calculate-button" type="button" onclick="calculateAll(), toggleCalculator()" value="Calculate Stats!" />
                                     <br>
@@ -74,7 +81,7 @@
                             <p>BA = H / AB</p>
                             <br>
                             <h3>On Base Percentage (OBP):</h3>
-                            <p>OBP = (H + BB + HBP) / (AB + BB + HBP + SF)</p>
+                            <p>OBP = (H + BB + HBP) / (AB + BB + HBP + SAC)</p>
                             <br>
                             <h3>Slugging Percentage (SLG):</h3>
                             <p>(1B + (2 * 2B) + (3 * 3B) + (4 * HR)) / AB</p>
@@ -94,7 +101,7 @@
                                 <p>OBP = On Base Percentage</p>
                                 <p>BB = Walks (Base on Balls)</p>
                                 <p>HBP = Hit By Pitch</p>
-                                <p>SF = Sacrifice Flies</p>
+                                <p>SAC = Sacrifice Flies & Sac Hits</p>
                                 <p>SLG = Slugging Percentage</p>
                                 <p>OPS = On-Base Plus Slugging</p>
                             </div>

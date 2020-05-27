@@ -155,7 +155,6 @@ body {
     padding: 30px 0;
     text-align: center;
     background-color: lightblue;
-    margin-top: 20px;
     margin-left: 20px;
 }
 
@@ -189,9 +188,14 @@ body {
     transition: 1s;
 }
 
+.small-print {
+    font-size: small;
+}
+
 .results {
     max-width: 80%;
     background-color: rgb(201, 164, 238);
+    margin-top: 2%;
     padding-top: 10px;
     padding-bottom: 10px;
     margin-left: 10%;
